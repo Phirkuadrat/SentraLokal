@@ -35,54 +35,54 @@ const CloseIcon = () => (
   </svg>
 );
 
+import { useLocation } from "react-router-dom";
+
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { to: "/", name: "Beranda" },
     { to: "/jelajahi", name: "Jelajahi" },
-    { to: "/daftar-umkm", name: "Daftar UMKM" },
+    { to: "/UMKM", name: "Daftar UMKM" },
   ];
 
   const getNavLinkClass = ({ isActive }) =>
     `px-3 py-2 rounded-md font-medium transition-colors duration-200 ${
-      isActive
-        ? "text-secondary" 
-        : "text-gray-300 hover:text-secondary" 
+      isActive ? "text-secondary" : "text-gray-300 hover:text-secondary"
     }`;
+
+  const isJelajahiPage = location.pathname === "/jelajahi";
 
   return (
     <nav
-      className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
-        ${
-          isScrolled
-            ? "bg-gray-900/80 backdrop-blur-lg shadow-xl"
-            : "bg-transparent" 
-        }
-      `}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out shadow-lg ${
+        isScrolled || isJelajahiPage
+          ? "bg-gray-900/90 backdrop-blur-lg"
+          : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <NavLink to="/" className="text-3xl font-bold text-secondary">
-              Sentralokal
-            </NavLink>
-          </div>
+          {/* Logo */}
+          <NavLink
+            to="/"
+            className="text-3xl font-bold text-secondary tracking-tight"
+          >
+            Sentralokal
+          </NavLink>
 
-          <div className="hidden md:flex md:items-center md:space-x-4">
+          {/* Menu Desktop */}
+          <div className="hidden md:flex md:items-center md:space-x-6">
             {navLinks.map((link) => (
               <NavLink key={link.name} to={link.to} className={getNavLinkClass}>
                 {link.name}
@@ -94,7 +94,7 @@ function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-secondary focus:outline-none"
+              className="text-gray-300 hover:text-secondary focus:outline-none transition-transform duration-300"
             >
               {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
@@ -104,8 +104,8 @@ function Navbar() {
 
       {/* Dropdown Menu Mobile */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/90 backdrop-blur-lg shadow-lg pb-4">
-          <div className="flex flex-col items-center space-y-2 px-2 pt-2 pb-3">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-md shadow-lg">
+          <div className="flex flex-col items-center space-y-2 px-2 pt-4 pb-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -117,7 +117,7 @@ function Navbar() {
                       : "text-gray-300 hover:text-secondary hover:bg-gray-800"
                   }`
                 }
-                onClick={() => setIsMenuOpen(false)} 
+                onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
               </NavLink>
