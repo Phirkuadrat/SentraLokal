@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
@@ -124,138 +125,144 @@ function JelajahiPage() {
   }, [popupInfo]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <Navbar />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="flex flex-col min-h-screen bg-gray-50">
+        <Navbar />
 
-      {/* Layout utama */}
-      <div className="relative flex flex-col md:flex-row flex-grow pt-20 overflow-hidden" style={{ height: "calc(100vh - 5rem)" }}>
-        {/* Tombol toggle */}
-        <button
-          onClick={() => setIsListOpen(!isListOpen)}
-          className={`absolute top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center 
+        {/* Layout utama */}
+        <div className="relative flex flex-col md:flex-row flex-grow pt-20 overflow-hidden" style={{ height: "calc(100vh - 5rem)" }}>
+          {/* Tombol toggle */}
+          <button
+            onClick={() => setIsListOpen(!isListOpen)}
+            className={`absolute top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center 
                       bg-white text-gray-700 border border-gray-200 shadow-lg rounded-r-lg w-9 h-20 hover:bg-gray-100 transition-all duration-300`}
-          style={{
-            left: isListOpen ? "calc(25% - 18px)" : "0",
-          }}
-        >
-          {isListOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </button>
+            style={{
+              left: isListOpen ? "calc(25% - 18px)" : "0",
+            }}
+          >
+            {isListOpen ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </button>
 
-        {/* Panel daftar UMKM */}
-        <div
-          className={`bg-gray-100 border-r border-gray-200 overflow-y-auto shadow-inner transition-all duration-500 ease-in-out 
-                      ${
-                        isListOpen
-                          ? "md:w-1/4 w-full h-1/2 md:h-auto"
-                          : "w-0 md:w-0 p-0"
-                      }`}
-        >
-          {isListOpen && (
-            <div className="p-5 space-y-5">
-              <h2 className="text-2xl font-semibold text-gray-800 flex items-center justify-between">
-                Jelajahi Sekitar
-                <span className="text-sm text-gray-500 font-normal">
-                  ({umkmList.length} UMKM)
-                </span>
-              </h2>
+          {/* Panel daftar UMKM */}
+          <div
+            className={`bg-gray-100 border-r border-gray-200 overflow-y-auto shadow-inner transition-all duration-500 ease-in-out 
+                      ${isListOpen
+                ? "md:w-1/4 w-full h-1/2 md:h-auto"
+                : "w-0 md:w-0 p-0"
+              }`}
+          >
+            {isListOpen && (
+              <div className="p-5 space-y-5">
+                <h2 className="text-2xl font-semibold text-gray-800 flex items-center justify-between">
+                  Jelajahi Sekitar
+                  <span className="text-sm text-gray-500 font-normal">
+                    ({umkmList.length} UMKM)
+                  </span>
+                </h2>
 
-              <div className="space-y-4">
-                {umkmList.map((umkm) => (
-                  <div
-                    key={`list-${umkm.id}`}
-                    onClick={() => setPopupInfo(umkm)}
-                    className="bg-white rounded-xl shadow hover:shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
-                  >
+                <div className="space-y-4">
+                  {umkmList.map((umkm) => (
+                    <div
+                      key={`list-${umkm.id}`}
+                      onClick={() => setPopupInfo(umkm)}
+                      className="bg-white rounded-xl shadow hover:shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
+                    >
+                      <img
+                        src={umkm.gambar}
+                        alt={umkm.nama}
+                        className="rounded-t-xl w-full h-32 object-cover"
+                      />
+                      <div className="p-3">
+                        <h3 className="text-gray-800 font-semibold text-lg truncate">
+                          {umkm.nama}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-1">
+                          Kategori: {umkm.kategori}
+                        </p>
+                        <p className="text-sm text-gray-600 line-clamp-2">
+                          {umkm.deskripsi}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Peta */}
+          <div
+            className={`transition-all duration-500 ease-in-out 
+                      ${isListOpen ? "md:w-3/4 w-full" : "w-full h-full"}`}
+          >
+            <MapContainer
+              center={mapCenter}
+              zoom={defaultZoom}
+              scrollWheelZoom
+              style={{ width: "100%", height: "100%" }}
+              className="z-0"
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+
+              <ResizeMap isListOpen={isListOpen} />
+
+              {umkmList.map((umkm) => (
+                <Marker
+                  key={`marker-${umkm.id}`}
+                  position={[umkm.lat, umkm.lng]}
+                  eventHandlers={{ click: () => setPopupInfo(umkm) }}
+                />
+              ))}
+
+              {popupInfo && (
+                <Popup
+                  ref={popupRef}
+                  position={[popupInfo.lat, popupInfo.lng]}
+                  onClose={() => setPopupInfo(null)}
+                >
+                  <div className="w-52 bg-white rounded-lg overflow-hidden shadow">
                     <img
-                      src={umkm.gambar}
-                      alt={umkm.nama}
-                      className="rounded-t-xl w-full h-32 object-cover"
+                      src={
+                        popupInfo.gambar ||
+                        "https://placehold.co/400x250/F97316/FFFFFF?text=SentraLokal"
+                      }
+                      alt={popupInfo.nama}
+                      className="w-full h-24 object-cover"
                     />
-                    <div className="p-3">
-                      <h3 className="text-gray-800 font-semibold text-lg truncate">
-                        {umkm.nama}
+                    <div className="p-2">
+                      <h3 className="font-semibold text-gray-900 text-sm">
+                        {popupInfo.nama}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-1">
-                        Kategori: {umkm.kategori}
+                      <p className="text-xs text-gray-500 mb-1">
+                        {popupInfo.kategori}
                       </p>
-                      <p className="text-sm text-gray-600 line-clamp-2">
-                        {umkm.deskripsi}
-                      </p>
+                      <Link
+                        to={`/umkm/${popupInfo.id}`}
+                        className="text-xs text-blue-600 hover:underline font-medium"
+                      >
+                        Lihat Detail
+                      </Link>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+                </Popup>
+              )}
 
-        {/* Peta */}
-        <div
-          className={`transition-all duration-500 ease-in-out 
-                      ${isListOpen ? "md:w-3/4 w-full" : "w-full h-full"}`}
-        >
-          <MapContainer
-            center={mapCenter}
-            zoom={defaultZoom}
-            scrollWheelZoom
-            style={{ width: "100%", height: "100%" }}
-            className="z-0"
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-
-            <ResizeMap isListOpen={isListOpen} />
-
-            {umkmList.map((umkm) => (
-              <Marker
-                key={`marker-${umkm.id}`}
-                position={[umkm.lat, umkm.lng]}
-                eventHandlers={{ click: () => setPopupInfo(umkm) }}
-              />
-            ))}
-
-            {popupInfo && (
-              <Popup
-                ref={popupRef}
-                position={[popupInfo.lat, popupInfo.lng]}
-                onClose={() => setPopupInfo(null)}
-              >
-                <div className="w-52 bg-white rounded-lg overflow-hidden shadow">
-                  <img
-                    src={
-                      popupInfo.gambar ||
-                      "https://placehold.co/400x250/F97316/FFFFFF?text=SentraLokal"
-                    }
-                    alt={popupInfo.nama}
-                    className="w-full h-24 object-cover"
-                  />
-                  <div className="p-2">
-                    <h3 className="font-semibold text-gray-900 text-sm">
-                      {popupInfo.nama}
-                    </h3>
-                    <p className="text-xs text-gray-500 mb-1">
-                      {popupInfo.kategori}
-                    </p>
-                    <Link
-                      to={`/umkm/${popupInfo.id}`}
-                      className="text-xs text-blue-600 hover:underline font-medium"
-                    >
-                      Lihat Detail
-                    </Link>
-                  </div>
-                </div>
-              </Popup>
-            )}
-
-            {popupInfo && (
-              <ChangeView center={[popupInfo.lat, popupInfo.lng]} zoom={17} />
-            )}
-          </MapContainer>
+              {popupInfo && (
+                <ChangeView center={[popupInfo.lat, popupInfo.lng]} zoom={17} />
+              )}
+            </MapContainer>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

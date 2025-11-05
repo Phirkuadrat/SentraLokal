@@ -61,12 +61,12 @@ function Navbar() {
       isActive ? "text-secondary" : "text-gray-300 hover:text-secondary"
     }`;
 
-  const isJelajahiPage = location.pathname === "/jelajahi";
+  const isNotHomePage = location.pathname !== "/";
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out shadow-lg ${
-        isScrolled || isJelajahiPage
+        isScrolled || isNotHomePage
           ? "bg-gray-900/90 backdrop-blur-lg"
           : "bg-transparent"
       }`}
