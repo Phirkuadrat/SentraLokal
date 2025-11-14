@@ -1,12 +1,10 @@
-// src/components/CardUMKM.jsx
 import React from 'react';
-import { Link } from 'react-router-dom'; // Untuk navigasi ke detail UMKM
+import { Link } from 'react-router-dom';
 
-function CardUMKM({ umkm }) { // Komponen ini menerima properti 'umkm'
+function CardUMKM({ umkm }) {
   return (
-    <Link to={`/umkm/${umkm.id}`} className="block group"> {/* Klik kartu akan ke halaman detail */}
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-        {/* Gambar UMKM */}
+    <Link to={`/umkm/${umkm.id}`} className="block group">
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
         <div className='overflow-hidden h-40'>
           <img
             src={umkm.gambar || 'https://via.placeholder.com/400x250/1f2937/ffffff?text=Image+UMKM'}
@@ -15,21 +13,32 @@ function CardUMKM({ umkm }) { // Komponen ini menerima properti 'umkm'
           />
         </div>
 
-        {/* Kategori */}
-        <div className="p-4">
-          <p className="text-sm font-semibold text-primary mb-1 uppercase tracking-wide">
-            {umkm.kategori}
-          </p>
+        <div className="p-4 flex-1 flex flex-col">
+          <div className='flex justify-between items-center mb-1'>
+            <p className="text-sm font-semibold text-primary uppercase tracking-wide">
+              {umkm.kategori}
+            </p>
 
-          {/* Nama UMKM */}
+            {umkm.lokasi && umkm.lokasi.length > 1 && (
+              <span className="text-xs font-semibold bg-primary/20 text-primary px-2 py-0.5 rounded-full">
+                {umkm.lokasi.length} Lokasi
+              </span>
+            )}
+          </div>
+
           <h3 className="text-lg font-bold text-gray-900 mb-2 truncate">
             {umkm.nama}
           </h3>
 
-          {/* Deskripsi Singkat */}
-          <p className="text-gray-600 text-sm line-clamp-2">
+          <p className="text-gray-600 text-sm line-clamp-2 flex-1">
             {umkm.deskripsi}
           </p>
+
+          {umkm.lokasi && umkm.lokasi.length > 0 && (
+            <p className="text-xs text-gray-500 mt-3 truncate">
+              📍 {umkm.lokasi[0].alamat}
+            </p>
+          )}
         </div>
       </div>
     </Link >
