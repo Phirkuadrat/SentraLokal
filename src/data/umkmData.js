@@ -423,6 +423,60 @@ export const allUmkmData = [
             }
         ],
     },
+    {
+        id: 13,
+        nama: "Warung Kopi Purnama",
+        kategori: "Minuman",
+        deskripsi: "Sebuah kedai kopi legendaris di Bandung yang didirikan pada tahun 1930, terkenal dengan gaya kopitiam klasik, menu otentik, dan suasana nostalgia. Awalnya bernama \"Chang Chong Se\" yang berarti \"selamat mencoba\", nama warung ini diubah menjadi \"Purnama\" pada tahun 1966 karena kebijakan pemerintah. Kedai ini masih dikelola oleh generasi keempat keluarga pendiri dan mempertahankan orisinalitasnya dengan resep dan interior tempo dulu.",
+        gambar: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-3_169.jpeg?w=700&q=90",
+        gallery: [
+            { src: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-3_169.jpeg?w=700&q=90" },
+            { src: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-1_169.jpeg?w=620" }
+        ],
+        promos: [],
+        events: [],
+        lokasi: [
+            {
+                id_lokasi: 1301,
+                nama_cabang: "Braga",
+                lat: -6.919989840892155,
+                lng: 107.60522360627061,
+                alamat: 'Jl. Alkateri No.22, Braga, Kec. Sumur Bandung, Kota Bandung',
+                telepon: '08112131930',
+                promos_cabang: []
+            }
+        ],
+    },
+    {
+        id: 14,
+        nama: "Batagor Hanjuang Astina",
+        kategori: "Makanan",
+        deskripsi: "Tempat makan batagor legendaris di Bandung yang terkenal dengan rasa bumbu kacangnya yang khas dan inovasi menu unik, yaitu batagor yang disajikan dengan Indomie goreng. Tempat ini berlokasi di Jalan Astina, dekat dengan Istana Plaza, dan sudah ada sejak era 90-an. Selain menu populer batagor goreng dengan Indomie, mereka juga menawarkan batagor kuah.",
+        gambar: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU5JWJnoJ26dBQIGUh7qcpQvDnm1ir0EUewtoewMpmvfwiq0XutvkTIf_tHhItdfGrjVLHigSX3CeYjP0aNl2c8WxDyB44kBpDmHBozmk-Ge5wH2pe_ug77noWF6f1xXJ_OAyRd6q9aoMfrzOPaRwj38KVW0PuQXB4QrYYSZHpFOyNxd7rOKwhlL0Xb4oaCU9POUPLzhTpGQjby95Mwz8lAiX9r-M0zFk-w9CQrZ19gQrDDAQj7j8ce_50vlzrBoRWF1YLtxMqhNH7MT1V06I-71BrhyJ950FRMHNfUa0KWQWpqvt3SVp-JAlr3HJwCkwpOUC2-yIZvdlbOTXEKDe8I0MRnheC3utBRxkF7MtBd4Vq8mKwh47lDElP0tx9H81Zg1UBj6o1D_GbdQdaUn1b51a6WMAex9uGb3x_Y6Mvm09zam&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=33408",
+        gallery: [
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU5JWJnoJ26dBQIGUh7qcpQvDnm1ir0EUewtoewMpmvfwiq0XutvkTIf_tHhItdfGrjVLHigSX3CeYjP0aNl2c8WxDyB44kBpDmHBozmk-Ge5wH2pe_ug77noWF6f1xXJ_OAyRd6q9aoMfrzOPaRwj38KVW0PuQXB4QrYYSZHpFOyNxd7rOKwhlL0Xb4oaCU9POUPLzhTpGQjby95Mwz8lAiX9r-M0zFk-w9CQrZ19gQrDDAQj7j8ce_50vlzrBoRWF1YLtxMqhNH7MT1V06I-71BrhyJ950FRMHNfUa0KWQWpqvt3SVp-JAlr3HJwCkwpOUC2-yIZvdlbOTXEKDe8I0MRnheC3utBRxkF7MtBd4Vq8mKwh47lDElP0tx9H81Zg1UBj6o1D_GbdQdaUn1b51a6WMAex9uGb3x_Y6Mvm09zam&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=33408" },
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6NSmOEX3BGG_pmguevlv9CWxabNuxVhz_SSpmk8Tqjs53vhZTi_hLXwmc8pUMeOKVH7jm4n8vTnvWtKba6WCxp-gKABnZtOUW-Gbldp_cYJAfOoDlnhz0tUjL-zUBhIgLR4DepnfLx_VcXkqgyiNfvYfnrsLUrPnsESiq50Qpj7zrsJxtj2ivZ-6_wb3LJCkyulBbRdBHvHlurD-SB5_uFkz5YuDw8eSpP9Yz9DWThnUtimBIQtJ7XD08G9AJijFq00nn4pmGoJz6qcZ-_i68QBP98_9VhQ1N47Tdyp5Z4xnNw-Hu7StmECLhAvWZ8fAv9Tv-u4-QBNyEwKNY-MLildbfRwjAKT4MC_dEJSnPMTe7j2l2PHm_MJxwI30aA5BLleZy_CBwl0CEffp8Uv_bMxTALaoHSJ25E0Q6x-ZwblXW5&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=39986" },
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU7a-Skxm1H4PkDtcNUorTdwKpDOE-NG6Y15hbzjgRl4NyH8ZPHEPNRXcbzrIek2eIEYQVTq3d0N9HlqgnlrwmI7GGLjh1r5XVWW7ODa0wR6ZZ5i7BuZtjCGoIdHd-ZePa2hGFCbb9axjWBRd9kWh5dv2zpZ9Ygad7Pe8R7scy2WqbRaX2fk0iJC9XlK5ZZIikVYNmrPae94rPpKZIY9tcAlfjFtdiBKfypr6qTgyGUng2Hy33t8GdaqF_hYr7dXbVKN2koEBAuxf-l3RslGjsg_4dd0gRZWOoCAQYY9ooHPAqq_Ul13JIJylF8NkXiAlp1_Mm2YOe0DaQWWf91_rb2Da19P2nTdUflPx7ZWGzSkwdmBXkbAI6tR9g-Et-4IAunWs_rcjlurpeB9peKp0j5x9y1y6ZOVPSPUHw6qedgaIaJ-Ofl5F9yIc93TucVx&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=69715"},
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6xKBgf8owipunvqrRE7Y53ZDMRUn09SusMdKee0hqC6ITw526WP7709MKH8fF17JtyR52kSFsBagQ2wV0sOW4XHhd3f0gkIgh4fS-j3afvy9nFAcixxNHaseJ-6DK2cYLmvI229nTJN-CpsfQ5kDIVlT4kPdA8NreyunO83n0j9j4poZJTCNUWeTDeqzS7Cx3YwOD-_QhXi6dI2qXUeYxIMjtRXQt2mQxGXL1v5Z3LKXh-dU3GI8T__f3fcu28AnknhlZyUMHbVbVOgF0Y5z2kcAgzBRtZn7Xem1pLgXWR9bRJWLt2QVHFSAp3TZNlD6CopJN_FQ2tOhg1Q3WsyoX71TXMIDpfHafPb6gmr4mtK9I6MyGms5OFbTRG9tlUDro0kbc5OYnMTVJlNp-6Mxh4Fnuay9_bgI5zAsfw0I4ntDEj90dW3y1pKlhk-1Gt&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=123487"},
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6YLY-dviWTGQCCvGNeZpe9D7HhRA-I5o1Zm4qV1Bf4ByPmmK5Vl8gQ8F8Ma0sxgaHyX6YzCwNELZI5Xb1jrEQ5oau4MFKJLyOHYT5CSHkFKrw7huDImbhWn-nP1G_b_TqEOh6vB_-_eAwBUrDsAfIUAo1AkyTEbAmyBMd0NCNFBaO0uQkCNimj8oqBi2Q1_-gmUG3GsXhFiqZ4kNGRWnUOdSkm_FxjeWP3eb2SeNgktL4FxMtYXlRaJOKhN_KxImZNsLbmJtKXTul-8iXsGFdGXKso-h-oDaBPeFbDnSgPbJlBE5WC-48NTicbkwI9vW26mGydHhYo0ICQvTfOZlITiSme_dmuCKy7Ih_MCUHAOXZXa3KjZMqQtZQgRlFMaoLFOZskL3d2oKRf7hYiKmNi8ahmrgn3QU5_F34tTGdZheWVX2-Eu88WIvYZug&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=127420"},
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU73ST14xyBzmLTu0F8W8Gdd2kHNPewJLFzBDCiLvICoGt6Z9DJULSeMMX1Bh91qPvsSGP2go8PGyaQQ-kO2409kQ_CI1UHIjCHULn0yBR6ghNEO2RHQWcLVler_oVIPZOTGTvwCm9xZbUfAoMc2mg4N3U72vxce3DBmVQB6f7eCTnaCuahpXK7E55XO5h552jZkkQru8Go3oS1M_NmU5ebiAXS2SHUMJCzfuWrlHZ4MYs_dFbS0t2PmxKz5hRk00xHqShcexnb_SmlRhA51m5p1p6YbLMWo-dbxNLIKd-_beRp0up8j97xa7gBl_BF8vkd0nLjDIllqCq8yde8lz2-6YIfKfzRO0ksRedAek72HIfQ7HgufFK_vgJ-mdNsLzbxqmLO7RFffeRXlN2YmLqiC06exAlEUbCU3NwI_f_FcHSb2&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=104346"},
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU7-8pUpFgPVloXik45jY5Zlr_SD5IdGBhQmjgPeoJD90PctWUdyZRjKdcfHV9dBvNsmpizkLlZ1NLDvg9W52W-JMjmR4hptGLE6qhAEkRkuG3sLIUMW3fkFJFj_x85FHS3OO4ls4nPFuj7zOE8G1M6wcsLtYKha9pbHLvqGxLpBuYHz_WGk4axf54HOKwkotigwfHYNyGDE1zXeMSbFVXc40ns4AycDVvN9sfrXB8rOgBir_HDsKI8hBjkI47-qhqyB4JB3sWP2mB0_Qj9Yv5R5NSrgFJSSMPiO3uzGHqeqSDp9PHmV0pEHgwJ9zP3DS3t0C5aGXuOANO8piDwekctVxywVz_k4NBaNIkjoHaMvStAejVhuWIhTPdXgJgWq1Zu99yU4aKJoc1GLdA7AV_86jwqTX2bwZMOt4zOZOvsVOA&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=6240"},
+            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU41DJjv146jmUbrzeLmGBdWHAVz1Fv3-vCaVSSOJM07_wd3WR_g6Q5eYQ0tN1iIb5q1odazu_p8qtPaHL1skr-c8dcVnCtVfe9OYxBr-e0cqey8fRJ_GmoHWK6WGkTwVfw4lcvpwz960JJ6EHFgGqbop_-UAREtDsvWf2gSE_uRQ6GL7ULwDB8QZhOrUjHMLaC2e9WTvG6Ahet98VQkZPAjEPrFmkfUl1IrKjf_5iAEebjifKdHtKGNJN16wmdSlVIFee--K-aPzme9_63Elmtuk3YcJv65QUZO_mDoYcS989BYgv_Deo4aNvBVgDo-RMA7W-RiR4EvEM-hP6GY6WjeVmWd4ZUR5pFV-R8xuCJgwriWpvn0lUNkCnVvTzgue3SBvjLjQoGSsoxZCTptCuF67TbiM_W4Wc7xLg5CRTY0-khd&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=116147"}
+        ],
+        promos: [],
+        events: [],
+        lokasi: [
+            {
+                id_lokasi: 1401,
+                nama_cabang: "Pamoyanan",
+                lat: -6.902846250648825,
+                lng: 107.59900748009571,
+                alamat: 'Jl. Astina No.5, Pamoyanan, Kec. Cicendo, Kota Bandung',
+                telepon: '085352719532',
+                promos_cabang: []
+            }
+        ],
+    },
 ];
 
 export const allPromos = allUmkmData.flatMap(umkm => umkm.promos);
