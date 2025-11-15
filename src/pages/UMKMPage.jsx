@@ -20,13 +20,16 @@ const SearchIcon = () => (
   </svg>
 );
 
-const gridContainerVariants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
 const gridItemVariants = {
   hidden: { y: 20, opacity: 0 },
-  show: { y: 0, opacity: 1 }
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
 };
 
 const INITIAL_LOAD_COUNT = 8;
@@ -35,7 +38,6 @@ const LOAD_MORE_AMOUNT = 4;
 function UMKMPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('umkm');
-
   const [visibleItems, setVisibleItems] = useState(INITIAL_LOAD_COUNT);
 
   useEffect(() => {
@@ -127,14 +129,16 @@ function UMKMPage() {
               {filteredUmkm.length > 0 ? (
                 <div>
                   <motion.div
-                    key={`umkm-grid-${searchTerm}-${visibleItems}`}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                    variants={gridContainerVariants}
-                    initial="hidden"
-                    animate="show"
                   >
                     {umkmToShow.map(umkm => (
-                      <motion.div key={umkm.id} variants={gridItemVariants}>
+                      <motion.div
+                        key={umkm.id}
+                        variants={gridItemVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         <CardUMKM umkm={umkm} />
                       </motion.div>
                     ))}
@@ -163,14 +167,17 @@ function UMKMPage() {
               {filteredPromos.length > 0 ? (
                 <div>
                   <motion.div
-                    key={`promo-grid-${searchTerm}-${visibleItems}`}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    variants={gridContainerVariants}
-                    initial="hidden"
-                    animate="show"
                   >
                     {promosToShow.map(promo => (
-                      <motion.div key={promo.id} variants={gridItemVariants} className="h-full">
+                      <motion.div
+                        key={promo.id}
+                        variants={gridItemVariants}
+                        className="h-full"
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary flex flex-col h-full">
                           <div className="flex-1">
                             <h3 className="font-bold text-lg text-gray-800 mb-2">{promo.judul}</h3>
@@ -210,14 +217,17 @@ function UMKMPage() {
               {filteredEvents.length > 0 ? (
                 <div>
                   <motion.div
-                    key={`event-grid-${searchTerm}-${visibleItems}`}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    variants={gridContainerVariants}
-                    initial="hidden"
-                    animate="show"
                   >
                     {eventsToShow.map(event => (
-                      <motion.div key={event.id} variants={gridItemVariants} className="h-full">
+                      <motion.div
+                        key={event.id}
+                        variants={gridItemVariants}
+                        className="h-full"
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-primary flex flex-col h-full">
                           <div className="flex-1">
                             <h3 className="font-bold text-lg text-gray-800 mb-2">{event.judul}</h3>
