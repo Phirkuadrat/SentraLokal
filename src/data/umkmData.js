@@ -1,106 +1,123 @@
 export const allUmkmData = [
     {
         id: 1,
-        nama: "Warung Kopi Senja",
-        kategori: "Minuman",
-        deskripsi: "Kopi robusta terbaik di gang sempit, dengan suasana cozy. Kami menyajikan biji kopi pilihan dari seluruh nusantara, diseduh dengan metode manual brew untuk menjaga cita rasa otentik.",
-        gambar: "https://images.unsplash.com/photo-1511920170033-f8329023c35c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        nama: "Toko Bubur Dibawah Pohon Rindang",
+        kategori: "Makanan",
+        deskripsi: "Warung bubur legendaris yang tak pernah sepi. Menawarkan kenikmatan semangkuk bubur ayam hangat di bawah naungan pohon rindang yang sejuk. Tempat sempurna untuk memulai pagi dengan suasana santai dan cita rasa otentik.",
+        gambar: "/image/bubur-dpr-1.png",
         gallery: [
-            { src: "https://images.unsplash.com/photo-1511920170033-f8329023c35c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1087&q=80" },
-            { src: "https://images.unsplash.com/photo-1559496417-13f6b0c3633f?auto=format&fit=crop&w=1087&q=80" },
-            { src: "https://images.unsplash.com/photo-1495474472287-4d713b20a45c?auto=format&fit=crop&w=1087&q=80" },
+            { src: "/image/bubur-dpr-1.png" },
+            { src: "/image/bubur-dpr-2.webp" },
+            { src: "/image/bubur-dpr-3.webp" },
         ],
         promos: [
-            { id: 'p1', umkmId: 1, umkmNama: 'Warung Kopi Senja', judul: 'Diskon 20% Kopi Susu', deskripsi: 'Tunjukkan kartu pelajar/mahasiswa untuk diskon 20% Kopi Susu Gula Aren.' },
-            { id: 'p2', umkmId: 1, umkmNama: 'Warung Kopi Senja', judul: 'Beli 1 Gratis 1', deskripsi: 'Promo Beli 1 Gratis 1 untuk semua manual brew setiap hari Jumat.' },
+            { id: 'p1', umkmId: 1, umkmNama: 'Bubur DPR', judul: 'Paket Sarapan Rindang', deskripsi: 'Pesan Bubur Spesial + Teh Manis Hangat dengan harga hemat. Berlaku jam 6-9 pagi.' },
+            { id: 'p2', umkmId: 1, umkmNama: 'Bubur DPR', judul: 'Gratis Sate', deskripsi: 'Setiap pembelian 2 porsi bubur, dapatkan 1 tusuk sate (ati/ampela) gratis.' }
         ],
-        events: [
-            { id: 'e1', umkmId: 1, umkmNama: 'Warung Kopi Senja', judul: 'Live Music Akustik', deskripsi: 'Nikmati alunan musik akustik setiap Sabtu malam, mulai pukul 19.00.' }
-        ],
+        events: [],
         lokasi: [
             {
                 id_lokasi: 101,
-                nama_cabang: "Braga",
-                lat: -6.9023,
-                lng: 107.6186,
-                alamat: "Jl. Braga No. 15, Bandung",
-                telepon: "081234567890",
+                nama_cabang: "Cihaur Geulis",
+                lat: -6.902611024926869,
+                lng: 107.63339522210063,
+                alamat: "Jl. Brigadir Jend. Katamso No.66, Kota Bandung, Jawa Barat",
+                telepon: "08176968707",
                 promos_cabang: []
             }
         ]
     },
     {
         id: 2,
-        nama: "Bakso Legendaris Pak Kumis",
+        nama: "Kedai Selasih",
         kategori: "Makanan",
-        deskripsi: "Bakso urat dengan resep turun temurun sejak 1980. Kuah kaldu kami dibuat dari tulang sumsum sapi asli, dimasak perlahan selama 8 jam.",
-        gambar: "https://images.unsplash.com/photo-1576867757603-05b1348c9803?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+        deskripsi: "Tempat makan yang lapang dan santai dengan suasana penuh warna. Kami menyajikan hidangan seafood lokal, sushi, dan beberapa menu pilihan Barat.",
+        gambar: "/image/kedai-selasih-1.png",
         gallery: [
-            { src: "https://images.unsplash.com/photo-1576867757603-05b1348c9803?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" },
-            { src: "https://images.unsplash.com/photo-1588117369363-3c3093a763e9?auto=format&fit=crop&w=1074&q=80" },
+            { src: "/image/kedai-selasih-1.png" },
+            { src: "/image/kedai-selasih-2.webp" },
+            { src: "/image/kedai-selasih-3.webp" },
         ],
         promos: [
-            { id: 'p1', umkmId: 2, umkmNama: 'Bakso Pak Kumis', judul: 'Gratis Es Teh Manis', deskripsi: 'Setiap pembelian Bakso Urat Spesial, gratis 1 Es Teh Manis.' },
+            { id: 'p1', umkmId: 2, umkmNama: 'Kedai Selasih', judul: 'Diskon 20% Seafood Bakar', deskripsi: 'Nikmati diskon 20% untuk semua menu seafood bakar setiap hari Selasa.' },
+            { id: 'p2', umkmId: 2, umkmNama: 'Kedai Selasih', judul: 'Paket Lunch Sushi', deskripsi: 'Dapatkan 1 Sushi Roll pilihan + Ocha dingin hanya dengan Rp 50.000 (Senin-Jumat, 11:00-14:00).' }
         ],
-        events: [],
+        events: [
+            { id: 'e1', umkmId: 2, umkmNama: 'Kedai Selasih', judul: 'Acoustic Night Live', deskripsi: 'Temani santap malam Anda dengan alunan musik akustik setiap Sabtu malam mulai pukul 19:00.' }
+        ],
         lokasi: [
             {
                 id_lokasi: 201,
-                nama_cabang: "Cihampelas",
-                lat: -6.9045,
-                lng: 107.6198,
-                alamat: "Jl. Cihampelas No. 120, Bandung",
-                telepon: "082112233445",
+                nama_cabang: "Neglasari",
+                lat: -6.895536496741586,
+                lng: 107.64029181153609,
+                alamat: "Jl. Cikutra Baru VI No.34, Kota Bandung",
+                telepon: "0227108165",
                 promos_cabang: []
             }
         ]
     },
     {
         id: 3,
-        nama: "Toko Kerajinan Etnik",
+        nama: "Saung Angklung Udjo",
         kategori: "Kerajinan",
-        deskripsi: "Berbagai kerajinan tangan unik dari seluruh nusantara. Kami bekerja sama langsung dengan pengrajin lokal untuk memastikan kualitas dan keaslian produk.",
-        gambar: "https://images.unsplash.com/photo-1510416075971-d64de8ab3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        deskripsi: "Sebuah pusat warisan budaya Sunda yang lengkap. Saung Angklung Udjo tidak hanya menjual kerajinan angklung bambu berkualitas, tetapi juga menawarkan pertunjukan musik interaktif dan workshop bagi pengunjung.",
+        gambar: "/image/saung-angklung-udjo-1.jpeg",
         gallery: [
-            { src: "https://images.unsplash.com/photo-1510416075971-d64de8ab3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
-            { src: "https://images.unsplash.com/photo-1600863895243-75a55f46397c?auto=format&fit=crop&w=687&q=80" },
-            { src: "https://images.unsplash.com/photo-1520621417066-67027c33e88c?auto=format&fit=crop&w=687&q=80" },
+            { src: "/image/saung-angklung-udjo-1.jpeg" },
+            { src: "/image/saung-angklung-udjo-2.jpeg" },
+            { src: "/image/saung-angklung-udjo-3.png" },
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 3, umkmNama: 'Saung Angklung Udjo', judul: 'Diskon 10% Kerajinan', deskripsi: 'Tunjukkan tiket pertunjukan Anda dan dapatkan diskon 10% untuk semua kerajinan bambu di toko kami.' }
+        ],
         events: [
-            { id: 'e1', umkmId: 3, umkmNama: 'Toko Kerajinan Etnik', judul: 'Workshop Membatik', deskripsi: 'Ikuti workshop membatik bersama seniman lokal. Terbuka untuk umum setiap hari Minggu.' }
+            { id: 'e1', umkmId: 3, umkmNama: 'Saung Angklung Udjo', judul: 'Pertunjukan Bambu Interaktif', deskripsi: 'Nikmati pertunjukan musik angklung yang memukau dan belajar bermain bersama. Diadakan setiap sore.' }
         ],
         lokasi: [
             {
                 id_lokasi: 301,
-                nama_cabang: "Gedung Merdeka",
-                lat: -6.9001,
-                lng: 107.6155,
-                alamat: "Jl. Asia Afrika No. 50, Bandung",
-                telepon: "083887766554",
+                nama_cabang: "Pasirlayung",
+                lat: -6.884747014260751,
+                lng: 107.65262502416415,
+                alamat: "Jl. Padasuka No.118, Kota Bandung",
+                telepon: "082182821200",
                 promos_cabang: []
             }
         ]
     },
     {
         id: 4,
-        nama: "Pangkas Rambut Gaya Baru",
-        kategori: "Jasa",
-        deskripsi: "Potongan rambut modern dan klasik dengan harga terjangkau.",
-        gambar: "https://images.unsplash.com/photo-1585749363324-336e09e8093a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        nama: "Gepuk Ny. Ong",
+        kategori: "Oleh-Oleh",
+        deskripsi: "Olahan daging sapi tradisional yang legendaris. Gepuk Ny. Ong menawarkan empal daging sapi empuk dengan bumbu rempah yang meresap dan rasa manis gurih otentik. Pilihan lauk praktis yang tahan lama untuk dibawa pulang.",
+        gambar: "/image/gepuk-nyong-2.jpg",
         gallery: [
-            { src: "https://images.unsplash.com/photo-1585749363324-336e09e8093a?ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+            { src: "/image/gepuk-nyong-2.jpg" },
+            { src: "/image/gepuk-nyong-3.jpg" },
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 4, umkmNama: 'Gepuk Ny. Ong', judul: 'Paket Oleh-Oleh Bandung', deskripsi: 'Beli 5 box Gepuk (rasa bebas), gratis 1 bungkus keripik kentang spesial.' },
+            { id: 'p2', umkmId: 4, umkmNama: 'Gepuk Ny. Ong', judul: 'Gratis Ongkir Bandung', deskripsi: 'Pesan antar ke hotel/rumah Anda di area Kota Bandung (minimal pembelian 3 box).' }
+        ],
         events: [],
         lokasi: [
             {
                 id_lokasi: 401,
-                nama_cabang: "Utama",
-                lat: -6.9033,
-                lng: 107.6167,
-                alamat: "Jl. Merdeka No. 10, Bandung",
-                telepon: "081234567891",
+                nama_cabang: "Pasteur",
+                lat: -6.8920,
+                lng: 107.5916,
+                alamat: "Jl. Dr. Djundjunan No. 155E, Kota Bandung",
+                telepon: "022-6031262",
+                promos_cabang: []
+            },
+            {
+                id_lokasi: 402,
+                nama_cabang: "Pasir Kaliki",
+                lat: -6.9114,
+                lng: 107.6020,
+                alamat: "Jl. Pasir Kaliki No. 104, Kota Bandung",
+                telepon: "082211157758",
                 promos_cabang: []
             }
         ]
@@ -110,16 +127,21 @@ export const allUmkmData = [
         nama: "Kopi Toko Djawa",
         kategori: "Minuman",
         deskripsi: "Sebuah kedai kopi kecil yang sederhana. Dahulu merupakan toko buku jadul yang kemudian “terlahir kembali” pada akhir Desember 2017. Kami bangga menjadi salah satu favorit warga lokal yang mencari kedai kopi untuk dinikmati bersama teman, atau sebagai pilihan “take away” melalui layanan pesan-antar ke alamat Anda. Kami menyediakan berbagai kopi signature dan pilihan pastry buatan rumahan. Kami juga dengan senang hati menyambut Anda beserta teman berkaki empat Anda.",
-        gambar: "https://www.pergidulu.com/wp-content/uploads/2018/10/Kopi-Toko-Djawa-Bandung.jpg",
+        gambar: "/image/kopi-toko-djawa-1.jpg",
         gallery: [
-            { src: "https://www.pergidulu.com/wp-content/uploads/2018/10/Kopi-Toko-Djawa-Bandung.jpg" },
-            { src: "https://www.pergidulu.com/wp-content/uploads/2018/10/Coffee-shop-Kopi-Toko-Djawa-Bandung.jpg" },
-            { src: "https://www.pergidulu.com/wp-content/uploads/2018/10/Es-Kopi-Toko-Djawa.jpg" },
-            { src: "https://www.pergidulu.com/wp-content/uploads/2018/10/Tempat-ngopi-paling-ramai-di-Bandung.jpg" },
-            { src: "https://www.pergidulu.com/wp-content/uploads/2018/10/Kopi-Toko-Djawa-coffee-shop-Bandung.jpg" },
+            { src: "/image/kopi-toko-djawa-1.jpg" },
+            { src: "/image/kopi-toko-djawa-2.jpg" },
+            { src: "/image/kopi-toko-djawa-3.jpg" },
+            { src: "/image/kopi-toko-djawa-4.jpg" },
+            { src: "/image/kopi-toko-djawa-5.jpg" },
         ],
-        promos: [],
-        events: [],
+        promos: [
+            { id: 'p1', umkmId: 5, umkmNama: 'Kopi Toko Djawa', judul: 'Kopi Hari Ini', deskripsi: 'Nikmati Es Kopi Awan dengan harga spesial setiap hari Senin.' },
+            { id: 'p2', umkmId: 5, umkmNama: 'Kopi Toko Djawa', judul: 'Bawa Tumbler-mu', deskripsi: 'Dapatkan potongan harga Rp 5.000 untuk semua minuman dengan membawa tumbler sendiri.' }
+        ],
+        events: [
+            { id: 'e1', umkmId: 5, umkmNama: 'Kopi Toko Djawa', judul: 'Djawa Berbagi Cerita', deskripsi: 'Sesi bincang-bincang inspiratif dengan kreator lokal. Cek jadwal di Instagram kami.' }
+        ],
         lokasi: [
             {
                 id_lokasi: 501,
@@ -227,14 +249,18 @@ export const allUmkmData = [
         nama: "Warung Lela (WALE)",
         kategori: "Makanan",
         deskripsi: "Sebuah warung makan legendaris di Bandung, yang lebih dikenal sebagai tempat favorit untuk menikmati mie yamin sejak tahun 1997. Warung ini terkenal dengan suasana yang nyaman dan sejuk di Dago Atas, serta menu andalannya yaitu Mie Yamin Manis dengan cita rasa autentik. ",
-        gambar: "https://akcdn.detik.net.id/community/media/visual/2024/06/01/wale-8.jpeg?w=700&q=90",
+        gambar: "/image/wale-1.jpeg",
         gallery: [
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/06/01/wale-6.jpeg?w=800" },
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/06/01/wale-2.jpeg?w=800" },
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/06/01/wale-4.jpeg?w=800" },
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/06/01/wale-5.jpeg?w=800" },
+            { src: "/image/wale-1.jpeg" },
+            { src: "/image/wale-2.jpeg" },
+            { src: "/image/wale-3.jpeg" },
+            { src: "/image/wale-4.jpeg" },
+            { src: "/image/wale-5.jpeg" },
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 6, umkmNama: 'Warung Lela (WALE)', judul: 'Paket WALE Nikmat', deskripsi: 'Dapatkan 1 porsi Yamin Manis/Asin + 1 Es Teh Manis dengan harga paket.' },
+            { id: 'p2', umkmId: 6, umkmNama: 'Warung Lela (WALE)', judul: 'Diskon Mahasiswa', deskripsi: 'Tunjukkan kartu mahasiswa aktif dan dapatkan diskon 10% (Senin-Kamis).' }
+        ],
         events: [],
         lokasi: [
             {
@@ -253,11 +279,15 @@ export const allUmkmData = [
         nama: "Mie Akup",
         kategori: "Makanan",
         deskripsi: "Sebuah kedai mie yamin legendaris di Bandung yang terkenal dengan rasa gurih, tekstur kenyal, dan harga terjangkau. Meskipun sudah berdiri puluhan tahun, Mie Akup terus berinovasi sambil mempertahankan kualitas dan keaslian resepnya dengan menyajikan berbagai varian mie yamin manis, asin, atau balado dengan aneka topping seperti bakso, siomay, dan pangsit.",
-        gambar: "https://akcdn.detik.net.id/community/media/visual/2025/02/04/mie-akup-bandung_169.jpeg?w=620",
+        gambar: "/image/mie-akup-1.jpeg",
         gallery: [
-            { src: "https://akcdn.detik.net.id/community/media/visual/2025/02/04/mie-akup-bandung-6_169.jpeg?w=700&q=90" },
+            { src: "/image/mie-akup-1.jpeg" },
+            { src: "/image/mie-akup-2.jpeg" },
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 7, umkmNama: 'Mie Akup', judul: 'Promo Ojol Spesial', deskripsi: 'Diskon khusus untuk pemesanan melalui GoFood/GrabFood setiap hari Rabu.' },
+            { id: 'p2', umkmId: 7, umkmNama: 'Mie Akup', judul: 'Gratis Pangsit Goreng', deskripsi: 'Setiap pembelian 2 porsi Mie Yamin Bakso, dapatkan 1 porsi Pangsit Goreng gratis.' }
+        ],
         events: [],
         lokasi: [
             {
@@ -303,12 +333,15 @@ export const allUmkmData = [
         nama: "Surabi Cihapit",
         kategori: "Makanan",
         deskripsi: "Surabi Cihapit adalah Surabi legendaris di Bandung yang terkenal dengan rasa oncomnya yang khas, kami berdiri sejak tahun 1993.",
-        gambar: "https://cdn.ayobandung.id/assets/medias/2025/Sep/01/cih.png",
+        gambar: "/image/surabi-cihapit-1.webp",
         gallery: [
-            { src: "https://cdn.ayobandung.id/assets/medias/2025/Sep/01/cih.png" },
-            { src: "https://cdn.ayobandung.id/crop/original/medias/2025/Sep/01/sur.png" },
+            { src: "/image/surabi-cihapit-1.webp" },
+            { src: "/image/surabi-cihapit-2.webp" },
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 8, umkmNama: 'Surabi Cihapit', judul: 'Paket Surabi Hangat', deskripsi: 'Beli 2 Surabi (1 Oncom, 1 Kinca) + 1 Teh Hangat dengan harga spesial.' },
+            { id: 'p2', umkmId: 8, umkmNama: 'Surabi Cihapit', judul: 'Beli 5 Gratis 1', deskripsi: 'Beli 5 surabi rasa apa saja, gratis 1 Surabi Oncom Polos.' }
+        ],
         events: [],
         lokasi: [
             {
@@ -327,14 +360,18 @@ export const allUmkmData = [
         nama: "Bakso Bintang Asia",
         kategori: "Makanan",
         deskripsi: "Sebuah restoran kuliner unik di Bandung yang menyajikan perpaduan konsep makanan Asia Tenggara, terutama bakso dengan kuah bening khas Vietnam seperti Pho. Restoran ini menawarkan pengalaman makan yang berbeda dengan konsep kedai modern minimalis dan dapur terbuka, serta menyediakan berbagai hidangan comfort food halal dari beberapa negara Asia Tenggara.",
-        gambar: "https://cdn.ayobandung.id/assets/medias/2025/Jul/19/80ff67fa.jpg",
+        gambar: "/image/bakso-bintang-asia-1.webp",
         gallery: [
-            { src: "https://cdn.ayobandung.id/assets/medias/2025/Jul/19/80ff67fa.jpg" },
-            { src: "https://cdn.ayobandung.id/crop/original/medias/2025/Jul/19/7f6275eb.jpg" },
-            { src: "https://cdn.ayobandung.id/assets/medias/2025/Jul/19/f666461c.jpg" },
+            { src: "/image/bakso-bintang-asia-1.webp" },
+            { src: "/image/bakso-bintang-asia-2.webp" },
+            { src: "/image/bakso-bintang-asia-3.webp" },
         ],
-        promos: [],
-        events: [],
+        promos: [
+            { id: 'p1', umkmId: 9, umkmNama: 'Bakso Bintang Asia', judul: 'Paket Berdua Asia', deskripsi: 'Pesan 2 porsi Bakso Pho + 2 Es Teh Tarik dengan harga lebih hemat.' }
+        ],
+        events: [
+            { id: 'e1', umkmId: 9, umkmNama: 'Bakso Bintang Asia', judul: 'Menu Spesial Bulan Ini', deskripsi: 'Cicipi menu Banh Mi (Sandwich Vietnam) edisi terbatas kami. Hanya bulan ini!' }
+        ],
         lokasi: [
             {
                 id_lokasi: 901,
@@ -352,12 +389,16 @@ export const allUmkmData = [
         nama: "Sentra Sikat dan Sapu",
         kategori: "Kerajinan",
         deskripsi: "Sentra kerajinan tradisional yang sudah ada sejak tahun 1980-an dan dikenal dengan kualitasnya yang mendunia, bahkan mampu menembus pasar Eropa. UMKM ini memproduksi aneka sapu ijuk dan sikat berbagai jenis, termasuk yang digunakan untuk membersihkan spare parts mesin industri, dan telah diwariskan secara turun-temurun.",
-        gambar: "https://ik.imagekit.io/goodid/gnfi/uploads/articles/large-berkunjung-ke-sentra-sikat-dan-sapu-di-cibiru-sudah-ada-sejak-1970-an-sampai-diminati-pasar-eropa-5JmdxhI0v3.jpg?tr=w-730,h-486,fo-center",
+        gambar: "/image/sentra-sikat-dan-sapu-1.webp",
         gallery: [
-            { src: "https://ik.imagekit.io/goodid/gnfi/uploads/articles/large-berkunjung-ke-sentra-sikat-dan-sapu-di-cibiru-sudah-ada-sejak-1970-an-sampai-diminati-pasar-eropa-5JmdxhI0v3.jpg?tr=w-730,h-486,fo-center" },
+            { src: "/image/sentra-sikat-dan-sapu-1.webp" },
         ],
-        promos: [],
-        events: [],
+        promos: [
+            { id: 'p1', umkmId: 10, umkmNama: 'Sentra Sikat dan Sapu', judul: 'Paket Bersih Rumah', deskripsi: 'Beli 1 Sapu Ijuk Super + 1 Sikat Kamar Mandi, dapatkan diskon 15%.' }
+        ],
+        events: [
+            { id: 'e1', umkmId: 10, umkmNama: 'Sentra Sikat dan Sapu', judul: 'Demo Membuat Sapu', deskripsi: 'Lihat langsung proses pembuatan Sapu Ijuk oleh pengrajin kami setiap Sabtu pagi.' }
+        ],
         lokasi: [
             {
                 id_lokasi: 1001,
@@ -375,17 +416,19 @@ export const allUmkmData = [
         nama: "Kopi Aroma",
         kategori: "Oleh-Oleh",
         deskripsi: "Kopi Aroma adalah usaha keluarga berukuran kecil (home-industry) yang dikelola oleh Pak Widyapratama. Kopi Aroma menjual kopi biji dan bubuk kopi dalam jumlah terbatas. Kopi Aroma didirikan oleh Tan Houw Sian pada tahun 1930. Awalnya, Tan Houw Sian merintis Kopi Aroma dengan melayani kebutuhan kopi pelanggan di Kota Bandung termasuk orang Belanda dan Jepang yang waktu itu tinggal di Bandung. Saat ini, Kopi Aroma dijalankan oleh generasi kedua dan ketiga, Bapak Widyapratama dan keluarganya. Seiring waktu, berkat pelanggan yang menggemari rasa dan keharuman Kopi Aroma, Kopi Aroma menjadi pilihan kopi yang diminum pelanggan di rumah dan menjadi oleh-oleh khas kota Bandung. Kopi Aroma berkembang lebih luas sehingga dikenal oleh pelanggan dari di dalam maupun luar kota Bandung, bahkan mancanegara.",
-        gambar: "https://uncov.co.id/img/blog/tOSTenMzCN/8cef19c5-a454-46f5-8019-909f0bb5f72a.jpg",
+        gambar: "/image/kopi-aroma-1.jpg",
         gallery: [
-            { src: "https://uncov.co.id/img/blog/tOSTenMzCN/8cef19c5-a454-46f5-8019-909f0bb5f72a.jpg" },
-            { src: "https://uncov.co.id/_next/image?url=%2Fimg%2Fblog%2FtOSTenMzCN%2F7a0c8b3a-e4e3-4ad6-8595-79890236e10d.jpg&w=1920&q=75" },
-            { src: "https://uncov.co.id/_next/image?url=%2Fimg%2Fblog%2FtOSTenMzCN%2Feca725d2-ba14-4433-a3c6-af8eea83e567.jpg&w=1920&q=75" },
-            { src: "https://uncov.co.id/_next/image?url=%2Fimg%2Fblog%2FtOSTenMzCN%2F92b36a88-3adf-4fd2-bd21-31fcdd9fe99b.jpg&w=1920&q=75" },
-            { src: "https://uncov.co.id/_next/image?url=%2Fimg%2Fblog%2FtOSTenMzCN%2F5bd2f2a0-44b3-49b7-bb55-2e8aef1ad628.jpg&w=1920&q=75" },
-            { src: "https://uncov.co.id/img/blog/tOSTenMzCN/73199020-0134-4664-a203-1ce73109e37f.jpg" },
-            { src: "https://kopiaroma.id/wp-content/uploads/2025/09/Screenshot-2025-09-07-at-10.57.03-AM.png" }
+            { src: "/image/kopi-aroma-1.jpg" },
+            { src: "/image/kopi-aroma-2.webp" },
+            { src: "/image/kopi-aroma-3.webp" },
+            { src: "/image/kopi-aroma-4.webp" },
+            { src: "/image/kopi-aroma-5.webp" },
+            { src: "/image/kopi-aroma-6.webp" },
+            { src: "/image/kopi-aroma-7.png" }
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 11, umkmNama: 'Kopi Aroma', judul: 'Paket Kopi Nusantara', deskripsi: 'Dapatkan paket spesial berisi 250gr Robusta dan 250gr Arabika dengan harga khusus (Stok terbatas).' }
+        ],
         events: [],
         lokasi: [
             {
@@ -404,12 +447,15 @@ export const allUmkmData = [
         nama: "Mie Kocok BPJS",
         kategori: "Makanan",
         deskripsi: "Hidangan mie kocok legendaris di Bandung yang populer karena kelezatannya. Nama \"BPJS\" berasal dari lokasinya yang dulunya berada di depan kantor BPJS Ketenagakerjaan di Jalan Suci atau Jalan PH.H Mustofa. Hidangan ini dikenal dengan kuah kaldu sapi yang kental dan kaya rasa, serta topping yang melimpah seperti kikil, urat, dan daging sapi.",
-        gambar: "https://akcdn.detik.net.id/community/media/visual/2024/03/08/mie-kocok-bpjs-abah-cibeunying-kota-bandung-1.jpeg?w=800",
+        gambar: "/image/mie-kocok-bpjs-1.jpeg",
         gallery: [
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/03/08/mie-kocok-bpjs-abah-cibeunying-kota-bandung-1.jpeg?w=800" },
-            { src: "https://akcdn.detik.net.id/community/media/visual/2024/03/08/mie-kocok-bpjs-abah-cibeunying-kota-bandung_169.jpeg?w=700&q=90" }
+            { src: "/image/mie-kocok-bpjs-1.jpeg" },
+            { src: "/image/mie-kocok-bpjs-2.jpeg" }
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 12, umkmNama: 'Mie Kocok BPJS', judul: 'Paket Komplit BPJS', deskripsi: 'Pesan Mie Kocok Spesial Kikil, gratis 1 Es Teh Manis.' },
+            { id: 'p2', umkmId: 12, umkmNama: 'Mie Kocok BPJS', judul: 'Tambah Kerupuk Sepuasnya', deskripsi: 'Hanya tambah Rp 3.000, Anda bisa ambil kerupuk kaleng sepuasnya.' }
+        ],
         events: [],
         lokasi: [
             {
@@ -428,13 +474,17 @@ export const allUmkmData = [
         nama: "Warung Kopi Purnama",
         kategori: "Minuman",
         deskripsi: "Sebuah kedai kopi legendaris di Bandung yang didirikan pada tahun 1930, terkenal dengan gaya kopitiam klasik, menu otentik, dan suasana nostalgia. Awalnya bernama \"Chang Chong Se\" yang berarti \"selamat mencoba\", nama warung ini diubah menjadi \"Purnama\" pada tahun 1966 karena kebijakan pemerintah. Kedai ini masih dikelola oleh generasi keempat keluarga pendiri dan mempertahankan orisinalitasnya dengan resep dan interior tempo dulu.",
-        gambar: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-3_169.jpeg?w=700&q=90",
+        gambar: "/image/warung-kopi-purnama-1.jpeg",
         gallery: [
-            { src: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-3_169.jpeg?w=700&q=90" },
-            { src: "https://akcdn.detik.net.id/community/media/visual/2022/05/25/salah-satu-kopi-legendaris-kedai-kopi-purnama-bandung-di-jalan-alkateri-1_169.jpeg?w=620" }
+            { src: "/image/warung-kopi-purnama-1.jpeg" },
+            { src: "/image/warung-kopi-purnama-2.jpeg" }
         ],
-        promos: [],
-        events: [],
+        promos: [
+            { id: 'p1', umkmId: 13, umkmNama: 'Warung Kopi Purnama', judul: 'Sarapan Klasik Purnama', deskripsi: 'Paket Kopi Susu + Roti Bakar Srikaya dengan harga spesial. Berlaku hingga jam 10 pagi.' }
+        ],
+        events: [
+            { id: 'e1', umkmId: 13, umkmNama: 'Warung Kopi Purnama', judul: 'Purnama Tempo Dulu', deskripsi: 'Setiap hari jadi, nikmati alunan musik keroncong live di kedai kami.' }
+        ],
         lokasi: [
             {
                 id_lokasi: 1301,
@@ -452,18 +502,21 @@ export const allUmkmData = [
         nama: "Batagor Hanjuang Astina",
         kategori: "Makanan",
         deskripsi: "Tempat makan batagor legendaris di Bandung yang terkenal dengan rasa bumbu kacangnya yang khas dan inovasi menu unik, yaitu batagor yang disajikan dengan Indomie goreng. Tempat ini berlokasi di Jalan Astina, dekat dengan Istana Plaza, dan sudah ada sejak era 90-an. Selain menu populer batagor goreng dengan Indomie, mereka juga menawarkan batagor kuah.",
-        gambar: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU5JWJnoJ26dBQIGUh7qcpQvDnm1ir0EUewtoewMpmvfwiq0XutvkTIf_tHhItdfGrjVLHigSX3CeYjP0aNl2c8WxDyB44kBpDmHBozmk-Ge5wH2pe_ug77noWF6f1xXJ_OAyRd6q9aoMfrzOPaRwj38KVW0PuQXB4QrYYSZHpFOyNxd7rOKwhlL0Xb4oaCU9POUPLzhTpGQjby95Mwz8lAiX9r-M0zFk-w9CQrZ19gQrDDAQj7j8ce_50vlzrBoRWF1YLtxMqhNH7MT1V06I-71BrhyJ950FRMHNfUa0KWQWpqvt3SVp-JAlr3HJwCkwpOUC2-yIZvdlbOTXEKDe8I0MRnheC3utBRxkF7MtBd4Vq8mKwh47lDElP0tx9H81Zg1UBj6o1D_GbdQdaUn1b51a6WMAex9uGb3x_Y6Mvm09zam&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=33408",
+        gambar: "/image/batagor-hanjuang-astina-1.jpg",
         gallery: [
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU5JWJnoJ26dBQIGUh7qcpQvDnm1ir0EUewtoewMpmvfwiq0XutvkTIf_tHhItdfGrjVLHigSX3CeYjP0aNl2c8WxDyB44kBpDmHBozmk-Ge5wH2pe_ug77noWF6f1xXJ_OAyRd6q9aoMfrzOPaRwj38KVW0PuQXB4QrYYSZHpFOyNxd7rOKwhlL0Xb4oaCU9POUPLzhTpGQjby95Mwz8lAiX9r-M0zFk-w9CQrZ19gQrDDAQj7j8ce_50vlzrBoRWF1YLtxMqhNH7MT1V06I-71BrhyJ950FRMHNfUa0KWQWpqvt3SVp-JAlr3HJwCkwpOUC2-yIZvdlbOTXEKDe8I0MRnheC3utBRxkF7MtBd4Vq8mKwh47lDElP0tx9H81Zg1UBj6o1D_GbdQdaUn1b51a6WMAex9uGb3x_Y6Mvm09zam&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=33408" },
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6NSmOEX3BGG_pmguevlv9CWxabNuxVhz_SSpmk8Tqjs53vhZTi_hLXwmc8pUMeOKVH7jm4n8vTnvWtKba6WCxp-gKABnZtOUW-Gbldp_cYJAfOoDlnhz0tUjL-zUBhIgLR4DepnfLx_VcXkqgyiNfvYfnrsLUrPnsESiq50Qpj7zrsJxtj2ivZ-6_wb3LJCkyulBbRdBHvHlurD-SB5_uFkz5YuDw8eSpP9Yz9DWThnUtimBIQtJ7XD08G9AJijFq00nn4pmGoJz6qcZ-_i68QBP98_9VhQ1N47Tdyp5Z4xnNw-Hu7StmECLhAvWZ8fAv9Tv-u4-QBNyEwKNY-MLildbfRwjAKT4MC_dEJSnPMTe7j2l2PHm_MJxwI30aA5BLleZy_CBwl0CEffp8Uv_bMxTALaoHSJ25E0Q6x-ZwblXW5&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=39986" },
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU7a-Skxm1H4PkDtcNUorTdwKpDOE-NG6Y15hbzjgRl4NyH8ZPHEPNRXcbzrIek2eIEYQVTq3d0N9HlqgnlrwmI7GGLjh1r5XVWW7ODa0wR6ZZ5i7BuZtjCGoIdHd-ZePa2hGFCbb9axjWBRd9kWh5dv2zpZ9Ygad7Pe8R7scy2WqbRaX2fk0iJC9XlK5ZZIikVYNmrPae94rPpKZIY9tcAlfjFtdiBKfypr6qTgyGUng2Hy33t8GdaqF_hYr7dXbVKN2koEBAuxf-l3RslGjsg_4dd0gRZWOoCAQYY9ooHPAqq_Ul13JIJylF8NkXiAlp1_Mm2YOe0DaQWWf91_rb2Da19P2nTdUflPx7ZWGzSkwdmBXkbAI6tR9g-Et-4IAunWs_rcjlurpeB9peKp0j5x9y1y6ZOVPSPUHw6qedgaIaJ-Ofl5F9yIc93TucVx&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=69715"},
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6xKBgf8owipunvqrRE7Y53ZDMRUn09SusMdKee0hqC6ITw526WP7709MKH8fF17JtyR52kSFsBagQ2wV0sOW4XHhd3f0gkIgh4fS-j3afvy9nFAcixxNHaseJ-6DK2cYLmvI229nTJN-CpsfQ5kDIVlT4kPdA8NreyunO83n0j9j4poZJTCNUWeTDeqzS7Cx3YwOD-_QhXi6dI2qXUeYxIMjtRXQt2mQxGXL1v5Z3LKXh-dU3GI8T__f3fcu28AnknhlZyUMHbVbVOgF0Y5z2kcAgzBRtZn7Xem1pLgXWR9bRJWLt2QVHFSAp3TZNlD6CopJN_FQ2tOhg1Q3WsyoX71TXMIDpfHafPb6gmr4mtK9I6MyGms5OFbTRG9tlUDro0kbc5OYnMTVJlNp-6Mxh4Fnuay9_bgI5zAsfw0I4ntDEj90dW3y1pKlhk-1Gt&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=123487"},
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU6YLY-dviWTGQCCvGNeZpe9D7HhRA-I5o1Zm4qV1Bf4ByPmmK5Vl8gQ8F8Ma0sxgaHyX6YzCwNELZI5Xb1jrEQ5oau4MFKJLyOHYT5CSHkFKrw7huDImbhWn-nP1G_b_TqEOh6vB_-_eAwBUrDsAfIUAo1AkyTEbAmyBMd0NCNFBaO0uQkCNimj8oqBi2Q1_-gmUG3GsXhFiqZ4kNGRWnUOdSkm_FxjeWP3eb2SeNgktL4FxMtYXlRaJOKhN_KxImZNsLbmJtKXTul-8iXsGFdGXKso-h-oDaBPeFbDnSgPbJlBE5WC-48NTicbkwI9vW26mGydHhYo0ICQvTfOZlITiSme_dmuCKy7Ih_MCUHAOXZXa3KjZMqQtZQgRlFMaoLFOZskL3d2oKRf7hYiKmNi8ahmrgn3QU5_F34tTGdZheWVX2-Eu88WIvYZug&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=127420"},
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU73ST14xyBzmLTu0F8W8Gdd2kHNPewJLFzBDCiLvICoGt6Z9DJULSeMMX1Bh91qPvsSGP2go8PGyaQQ-kO2409kQ_CI1UHIjCHULn0yBR6ghNEO2RHQWcLVler_oVIPZOTGTvwCm9xZbUfAoMc2mg4N3U72vxce3DBmVQB6f7eCTnaCuahpXK7E55XO5h552jZkkQru8Go3oS1M_NmU5ebiAXS2SHUMJCzfuWrlHZ4MYs_dFbS0t2PmxKz5hRk00xHqShcexnb_SmlRhA51m5p1p6YbLMWo-dbxNLIKd-_beRp0up8j97xa7gBl_BF8vkd0nLjDIllqCq8yde8lz2-6YIfKfzRO0ksRedAek72HIfQ7HgufFK_vgJ-mdNsLzbxqmLO7RFffeRXlN2YmLqiC06exAlEUbCU3NwI_f_FcHSb2&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=104346"},
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU7-8pUpFgPVloXik45jY5Zlr_SD5IdGBhQmjgPeoJD90PctWUdyZRjKdcfHV9dBvNsmpizkLlZ1NLDvg9W52W-JMjmR4hptGLE6qhAEkRkuG3sLIUMW3fkFJFj_x85FHS3OO4ls4nPFuj7zOE8G1M6wcsLtYKha9pbHLvqGxLpBuYHz_WGk4axf54HOKwkotigwfHYNyGDE1zXeMSbFVXc40ns4AycDVvN9sfrXB8rOgBir_HDsKI8hBjkI47-qhqyB4JB3sWP2mB0_Qj9Yv5R5NSrgFJSSMPiO3uzGHqeqSDp9PHmV0pEHgwJ9zP3DS3t0C5aGXuOANO8piDwekctVxywVz_k4NBaNIkjoHaMvStAejVhuWIhTPdXgJgWq1Zu99yU4aKJoc1GLdA7AV_86jwqTX2bwZMOt4zOZOvsVOA&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=6240"},
-            { src: "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAWn5SU41DJjv146jmUbrzeLmGBdWHAVz1Fv3-vCaVSSOJM07_wd3WR_g6Q5eYQ0tN1iIb5q1odazu_p8qtPaHL1skr-c8dcVnCtVfe9OYxBr-e0cqey8fRJ_GmoHWK6WGkTwVfw4lcvpwz960JJ6EHFgGqbop_-UAREtDsvWf2gSE_uRQ6GL7ULwDB8QZhOrUjHMLaC2e9WTvG6Ahet98VQkZPAjEPrFmkfUl1IrKjf_5iAEebjifKdHtKGNJN16wmdSlVIFee--K-aPzme9_63Elmtuk3YcJv65QUZO_mDoYcS989BYgv_Deo4aNvBVgDo-RMA7W-RiR4EvEM-hP6GY6WjeVmWd4ZUR5pFV-R8xuCJgwriWpvn0lUNkCnVvTzgue3SBvjLjQoGSsoxZCTptCuF67TbiM_W4Wc7xLg5CRTY0-khd&3u700&5m1&2e1&callback=none&r_url=https%3A%2F%2Fwww.waze.com%2Fid%2Flive-map%2Fdirections%2Fid%2Fjawa-barat%2Fbatagor-hanjuang-astina&key=AIzaSyD3pw7nGs7Jal1C4A7G3L9pYxfM6urTeMg&token=116147"}
+            { src: "/image/batagor-hanjuang-astina-1.jpg" },
+            { src: "/image/batagor-hanjuang-astina-2.jpg" },
+            { src: "/image/batagor-hanjuang-astina-3.jpg" },
+            { src: "/image/batagor-hanjuang-astina-4.jpg" },
+            { src: "/image/batagor-hanjuang-astina-5.jpg" },
+            { src: "/image/batagor-hanjuang-astina-6.jpg" },
+            { src: "/image/batagor-hanjuang-astina-7.jpg" },
+            { src: "/image/batagor-hanjuang-astina-8.jpg" }
         ],
-        promos: [],
+        promos: [
+            { id: 'p1', umkmId: 14, umkmNama: 'Batagor Hanjuang Astina', judul: 'Paket Batagor + Indomie', deskripsi: 'Nikmati menu andalan Batagor disajikan dengan Indomie Goreng + Es Teh Botol dengan harga paket.' },
+            { id: 'p2', umkmId: 14, umkmNama: 'Batagor Hanjuang Astina', judul: 'Diskon Pelajar', deskripsi: 'Tunjukkan kartu pelajar/mahasiswa dan dapatkan diskon 10% untuk makan di tempat.' }
+        ],
         events: [],
         lokasi: [
             {
