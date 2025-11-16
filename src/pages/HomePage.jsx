@@ -74,37 +74,40 @@ function HomePage() {
                 </button>
               </div>
             </div>
+            {/* SATU SENTRAL */}
             <SplitText
-              text="Satu Sentral"
+              text={
+                <>
+                  Satu <span className="text-[#FF7517]">Sentral</span>
+                </>
+              }
               className="text-6xl md:text-8xl font-bold mb-6 tracking-tight"
               delay={80}
               duration={0.7}
-              ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 60 }}
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}
               rootMargin="-100px"
               textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              highlightWords={[{ word: " Sentral", color: "#FF7517" }]}
             />
 
             {/* RIBUAN CERITA LOKAL */}
             <SplitText
-              text="Ribuan Cerita Lokal"
+              text={
+                <>
+                  Ribuan Cerita <span className="text-[#FF7517]">Lokal</span>
+                </>
+              }
               className="text-5xl md:text-7xl font-bold tracking-tight"
               delay={80}
               duration={0.7}
-              ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 60 }}
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}
               rootMargin="-100px"
               textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-              highlightWords={[{ word: " Lokal", color: "#FF7517" }]}
             />
           </div>
           <div className="absolute bottom-0 left-0 w-full h-auto z-10 ">
@@ -143,7 +146,6 @@ function HomePage() {
           </motion.section>
 
           <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-            {/* <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">UMKM Pilihan</h2> */}
             {filteredUmkm.length === 0 ? (
               <p className="text-center text-gray-500 text-lg">Tidak ada UMKM yang ditemukan.</p>
             ) : (
