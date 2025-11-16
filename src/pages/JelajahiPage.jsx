@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -10,17 +10,13 @@ import Navbar from "../components/Navbar.jsx";
 
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
+
 let DefaultIcon = L.icon({
   iconUrl, shadowUrl, iconSize: [25, 41], iconAnchor: [12, 41],
   popupAnchor: [1, -34], shadowSize: [41, 41],
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-function ChangeView({ center, zoom }) {
-  const map = useMap();
-  map.setView(center, zoom);
-  return null;
-}
 function ResizeMap({ isListOpen }) {
   const map = useMap();
   useEffect(() => {
@@ -28,13 +24,13 @@ function ResizeMap({ isListOpen }) {
   }, [isListOpen, map]);
   return null;
 }
+
 const ChevronLeftIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
 );
 const ChevronRightIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
 );
-
 const SearchIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -47,20 +43,13 @@ const allLocations = allUmkmData.flatMap(umkm =>
     brandGambar: umkm.gambar, brandDeskripsi: umkm.deskripsi
   }))
 );
-
 const allCategories = ["All", ...new Set(allLocations.map(loc => loc.brandKategori))];
 
 function MapEvents({ setMapBounds }) {
   const map = useMapEvents({
-    ready() {
-      setMapBounds(map.getBounds());
-    },
-    moveend() {
-      setMapBounds(map.getBounds());
-    },
-    zoomend() {
-      setMapBounds(map.getBounds());
-    }
+    ready() { setMapBounds(map.getBounds()); },
+    moveend() { setMapBounds(map.getBounds()); },
+    zoomend() { setMapBounds(map.getBounds()); }
   });
   return null;
 }
@@ -70,16 +59,14 @@ function JelajahiPage() {
   const [popupInfo, setPopupInfo] = useState(null);
   const popupRef = useRef(null);
   const mapRef = useRef(null);
-
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [mapBounds, setMapBounds] = useState(null);
-
   const [locationsOnMap, setLocationsOnMap] = useState(allLocations);
   const [locationsInList, setLocationsInList] = useState(allLocations);
-
   const mapCenter = [-6.9023, 107.6186];
   const defaultZoom = 14;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const filtered = allLocations.filter(loc => {
@@ -93,12 +80,10 @@ function JelajahiPage() {
 
   useEffect(() => {
     if (!mapBounds) return;
-
     const inBoundLocs = locationsOnMap.filter(loc => {
       return mapBounds.contains([loc.lat, loc.lng]);
     });
     setLocationsInList(inBoundLocs);
-
   }, [mapBounds, locationsOnMap]);
 
   useEffect(() => {
@@ -107,11 +92,15 @@ function JelajahiPage() {
     }
   }, [popupInfo]);
 
-  const onLocationClick = (lokasi) => {
+  const onMapPinClick = (lokasi) => {
     setPopupInfo(lokasi);
     if (mapRef.current) {
       mapRef.current.flyTo([lokasi.lat, lokasi.lng], 17);
     }
+  };
+
+  const handlePopupClick = (brandId) => {
+    navigate(`/umkm/${brandId}`);
   };
 
   return (
@@ -141,7 +130,6 @@ function JelajahiPage() {
                 <h2 className="text-2xl font-semibold text-gray-800">
                   Jelajahi Sekitar
                 </h2>
-
                 <div className="sticky top-0 bg-gray-100 py-2 z-10">
                   <div className="relative mb-2">
                     <input
@@ -161,7 +149,7 @@ function JelajahiPage() {
                         key={kategori}
                         onClick={() => setSelectedCategory(kategori)}
                         className={`py-1 px-3 rounded-full text-sm font-semibold transition-colors
-                          ${selectedCategory === kategori
+  	  	  	  	  	  	  ${selectedCategory === kategori
                             ? 'bg-primary text-white'
                             : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-200'
                           }`}
@@ -171,21 +159,19 @@ function JelajahiPage() {
                     ))}
                   </div>
                 </div>
-
                 <div className="border-t border-gray-300 pt-4">
                   <h3 className="text-sm font-semibold text-gray-600 mb-2">
                     Menampilkan {locationsInList.length} dari {locationsOnMap.length} lokasi
                   </h3>
-
                   {locationsInList.length === 0 ? (
                     <p className="text-gray-500 text-center py-10">Tidak ada lokasi ditemukan di area peta ini.</p>
                   ) : (
                     <div className="space-y-4">
                       {locationsInList.map((lokasi) => (
-                        <div
+                        <Link
                           key={`list-${lokasi.id_lokasi}`}
-                          onClick={() => onLocationClick(lokasi)}
-                          className="bg-white rounded-xl shadow hover:shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
+                          to={`/umkm/${lokasi.brandId}`}
+                          className="block bg-white rounded-xl shadow hover:shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
                         >
                           <img
                             src={lokasi.brandGambar}
@@ -203,7 +189,7 @@ function JelajahiPage() {
                               Kategori: {lokasi.brandKategori}
                             </p>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -220,7 +206,7 @@ function JelajahiPage() {
               zoom={defaultZoom}
               scrollWheelZoom
               style={{ width: "100%", height: "100%" }}
-              className="z-0"
+              m className="z-0"
               ref={mapRef}
             >
               <TileLayer
@@ -228,14 +214,13 @@ function JelajahiPage() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <ResizeMap isListOpen={isListOpen} />
-
               <MapEvents setMapBounds={setMapBounds} />
 
               {locationsOnMap.map((lokasi) => (
                 <Marker
                   key={`marker-${lokasi.id_lokasi}`}
                   position={[lokasi.lat, lokasi.lng]}
-                  eventHandlers={{ click: () => onLocationClick(lokasi) }}
+                  eventHandlers={{ click: () => onMapPinClick(lokasi) }}
                 />
               ))}
 
@@ -245,36 +230,37 @@ function JelajahiPage() {
                   position={[popupInfo.lat, popupInfo.lng]}
                   onClose={() => setPopupInfo(null)}
                 >
-                  <div className="w-52 bg-white rounded-lg overflow-hidden shadow">
-                    <img
-                      src={popupInfo.brandGambar}
-                      alt={popupInfo.brandNama}
-                      className="w-full h-24 object-cover"
-                    />
-                    <div className="p-2">
-                      <h3 className="font-semibold text-gray-900 text-sm">
-                        {popupInfo.brandNama}
-                      </h3>
-                      <p className="text-xs text-gray-600 font-medium mb-1">
-                        ({popupInfo.nama_cabang})
-                      </p>
-                      <p className="text-xs text-gray-500 mb-1">
-                        {popupInfo.brandKategori}
-                      </p>
-                      <Link
-                        to={`/umkm/${popupInfo.brandId}`}
-                        className="text-xs text-blue-600 hover:underline font-medium"
-                      >
-                        Lihat Detail Brand
-                      </Link>
+                  <div
+                    onClick={() => handlePopupClick(popupInfo.brandId)}
+                    className="block w-52 cursor-pointer"
+                  >
+                    <div className="bg-white rounded-lg overflow-hidden shadow hover:bg-gray-50 transition-colors">
+                      <img
+                        src={popupInfo.brandGambar}
+                        alt={popupInfo.brandNama}
+                        className="w-full h-24 object-cover"
+                      />
+                      <div className="p-2">
+                        <h3 className="font-semibold text-gray-900 text-sm">
+                          {popupInfo.brandNama}
+                        </h3>
+                        <p className="text-xs text-gray-600 font-medium mb-1">
+                          ({popupInfo.nama_cabang})
+                        </p>
+                        <p className="text-xs text-gray-500 mb-1">
+                          {popupInfo.brandKategori}
+                        </p>
+                        <span
+                          className="text-xs text-blue-600 hover:underline font-medium"
+                        >
+                          Lihat Detail Brand
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Popup>
               )}
 
-              {popupInfo && (
-                <ChangeView center={[popupInfo.lat, popupInfo.lng]} zoom={17} />
-              )}
             </MapContainer>
           </div>
         </div>
