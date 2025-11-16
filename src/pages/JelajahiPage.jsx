@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar.jsx";
 
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import shadowUrl from "leaflet/dist/images/marker-shadow.png";
+
 let DefaultIcon = L.icon({
   iconUrl, shadowUrl, iconSize: [25, 41], iconAnchor: [12, 41],
   popupAnchor: [1, -34], shadowSize: [41, 41],
@@ -21,6 +22,7 @@ function ChangeView({ center, zoom }) {
   map.setView(center, zoom);
   return null;
 }
+
 function ResizeMap({ isListOpen }) {
   const map = useMap();
   useEffect(() => {
@@ -28,9 +30,11 @@ function ResizeMap({ isListOpen }) {
   }, [isListOpen, map]);
   return null;
 }
+
 const ChevronLeftIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
 );
+
 const ChevronRightIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
 );
