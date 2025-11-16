@@ -83,7 +83,7 @@ function Navbar() {
                 to={link.to}
                 className={({ isActive }) =>
                   `block w-full text-center px-3 py-2 rounded-md font-medium transition-colors duration-200 ${
-                    isActive ? "text-secondary bg-gray-800" : "text-gray-300 hover:text-secondary hover:bg-gray-800"
+                    isActive ? "text-secondary bg-gray-800" : "text-gray-300 hover:text-primary hover:bg-gray-800"
                   }`
                 }
                 onClick={() => setIsMenuOpen(false)}

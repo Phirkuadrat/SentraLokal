@@ -1,12 +1,8 @@
-// Nama file: Footer.jsx
-
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    // 1. Background diubah kembali ke hitam (bg-gray-900)
-    // 2. Teks default diubah ke abu-abu terang (text-gray-400)
     <footer className="bg-gray-900 text-gray-400 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
@@ -54,7 +50,7 @@ const Footer = () => {
           {/* Bagian Our Team (Modifikasi Horizontal 3 Anggota) */}
           <div>
             {/* 2. Judul diubah ke warna oranye */}
-            <h4 className="text-lg font-semibold text-[#FF7517] mb-4">Our Team</h4>
+            <h4 className="text-lg font-semibold text-[#FF7517] mb-4">Tim Kami</h4>
             <div className="grid grid-cols-3 gap-4">
               {/* Anggota Tim 1 */}
               <div className="text-center">
@@ -124,14 +120,6 @@ const Footer = () => {
               className="text-gray-400 hover:text-[#FF7517] transition-colors duration-300 text-xl"
             >
               <FaInstagram />
-            </a>
-            <a
-              href="httpsS://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#FF7517] transition-colors duration-300 text-xl"
-            >
-              <FaLinkedinIn />
             </a>
           </div>
         </div>

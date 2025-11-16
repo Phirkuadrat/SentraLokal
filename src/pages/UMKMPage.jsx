@@ -1,19 +1,17 @@
-import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '/src/components/Navbar.jsx';
-import CardUMKM from '/src/components/CardUMKM.jsx';
-import { allUmkmData, allPromos, allEvents } from '/src/data/umkmData.js';
+import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Navbar from "/src/components/Navbar.jsx";
+import CardUMKM from "/src/components/CardUMKM.jsx";
+import Footer from "../components/Footer";
 
-const PromoIcon = () => (
-  <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m-1 1H8m5 0h3m-3 1v1m-2-1c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m-1 1H8m5 0h3m-3 1v1"></path></svg>
-);
-const EventIcon = () => (
-  <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-);
-const StoreIcon = () => (
-  <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-);
+import { allUmkmData, allPromos, allEvents } from "/src/data/umkmData.js";
+
+const PromoIcon = () => <img src="/image/promo.svg" alt="Promo" className="w-6 h-6 mb-1" />;
+
+const StoreIcon = () => <img src="/image/store.svg" alt="Store" className="w-6 h-6 mb-1" />;
+
+const EventIcon = () => <img src="/image/event.svg" alt="Event" className="w-6 h-6 mb-1" />;
 const SearchIcon = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -27,37 +25,40 @@ const gridItemVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 const INITIAL_LOAD_COUNT = 8;
 const LOAD_MORE_AMOUNT = 4;
 
 function UMKMPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState('umkm');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [activeTab, setActiveTab] = useState("umkm");
   const [visibleItems, setVisibleItems] = useState(INITIAL_LOAD_COUNT);
 
   useEffect(() => {
     setVisibleItems(INITIAL_LOAD_COUNT);
   }, [activeTab, searchTerm]);
 
-  const filteredUmkm = allUmkmData.filter(umkm =>
-    umkm.nama.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    umkm.kategori.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    umkm.deskripsi.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredUmkm = allUmkmData.filter(
+    (umkm) =>
+      umkm.nama.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      umkm.kategori.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      umkm.deskripsi.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const filteredPromos = allPromos.filter(promo =>
-    promo.judul.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    promo.deskripsi.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    promo.umkmNama.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPromos = allPromos.filter(
+    (promo) =>
+      promo.judul.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      promo.deskripsi.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      promo.umkmNama.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  const filteredEvents = allEvents.filter(event =>
-    event.judul.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    event.deskripsi.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    event.umkmNama.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredEvents = allEvents.filter(
+    (event) =>
+      event.judul.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.deskripsi.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.umkmNama.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const umkmToShow = filteredUmkm.slice(0, visibleItems);
@@ -65,46 +66,52 @@ function UMKMPage() {
   const eventsToShow = filteredEvents.slice(0, visibleItems);
 
   const handleLoadMore = () => {
-    setVisibleItems(prevVisibleItems => prevVisibleItems + LOAD_MORE_AMOUNT);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + LOAD_MORE_AMOUNT);
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
       <div className="bg-background min-h-screen">
         <Navbar />
 
-        <div className="bg-primary text-white shadow-lg pt-20">
-          <div className="container mx-auto max-w-7xl px-4 py-16 text-center">
-            <h1 className="text-5xl font-bold">Temukan Semuanya</h1>
-            <p className="text-xl text-secondary mt-2">
-              Promo, event, dan UMKM terbaik di satu tempat.
-            </p>
+        <div className="bg-cover bg-center bg-no-repeat relative" style={{ backgroundImage: "url('/image/bg-umkm.jpg')" }}>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+
+          <div className="container mx-auto max-w-7xl px-4 py-20 text-center relative z-10 mt-20">
+            <h1 className="text-5xl md:text-6xl font-bold text-white">Temukan Semuanya</h1>
+            <p className="text-xl md:text-2xl text-white mt-4">Promo, event, dan UMKM terbaik di satu tempat.</p>
           </div>
         </div>
 
         <div className="container mx-auto max-w-7xl p-4 md:p-8">
-
           <div className="flex justify-center mb-8 border-b border-gray-300">
             <button
-              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${activeTab === 'umkm' ? 'text-primary border-b-4 border-primary' : 'text-gray-600 hover:text-primary'}`}
-              onClick={() => { setActiveTab('umkm'); }}
+              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${
+                activeTab === "umkm" ? "text-primary border-b-4 border-primary" : "text-gray-600 hover:text-primary"
+              }`}
+              onClick={() => {
+                setActiveTab("umkm");
+              }}
             >
               <StoreIcon /> UMKM
             </button>
             <button
-              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${activeTab === 'promo' ? 'text-primary border-b-4 border-primary' : 'text-gray-600 hover:text-primary'}`}
-              onClick={() => { setActiveTab('promo'); }}
+              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${
+                activeTab === "promo" ? "text-primary border-b-4 border-primary" : "text-gray-600 hover:text-primary"
+              }`}
+              onClick={() => {
+                setActiveTab("promo");
+              }}
             >
               <PromoIcon /> Promo
             </button>
             <button
-              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${activeTab === 'event' ? 'text-primary border-b-4 border-primary' : 'text-gray-600 hover:text-primary'}`}
-              onClick={() => { setActiveTab('event'); }}
+              className={`flex flex-col items-center w-32 py-4 px-4 text-lg font-semibold transition-colors duration-200 ${
+                activeTab === "event" ? "text-primary border-b-4 border-primary" : "text-gray-600 hover:text-primary"
+              }`}
+              onClick={() => {
+                setActiveTab("event");
+              }}
             >
               <EventIcon /> Event
             </button>
@@ -113,7 +120,7 @@ function UMKMPage() {
           <div className="mb-8 relative">
             <input
               type="text"
-              placeholder={`Cari ${activeTab === 'umkm' ? 'UMKM' : activeTab === 'promo' ? 'promo' : 'event'}...`}
+              placeholder={`Cari ${activeTab === "umkm" ? "UMKM" : activeTab === "promo" ? "promo" : "event"}...`}
               className="w-full p-4 pl-12 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -123,15 +130,13 @@ function UMKMPage() {
             </div>
           </div>
 
-          {activeTab === 'umkm' && (
+          {activeTab === "umkm" && (
             <section>
               <h2 className="sr-only">Semua UMKM</h2>
               {filteredUmkm.length > 0 ? (
                 <div>
-                  <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                  >
-                    {umkmToShow.map(umkm => (
+                  <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {umkmToShow.map((umkm) => (
                       <motion.div
                         key={umkm.id}
                         variants={gridItemVariants}
@@ -161,15 +166,13 @@ function UMKMPage() {
             </section>
           )}
 
-          {activeTab === 'promo' && (
+          {activeTab === "promo" && (
             <section>
               <h2 className="sr-only">Promo & Penawaran Terbaik</h2>
               {filteredPromos.length > 0 ? (
                 <div>
-                  <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                  >
-                    {promosToShow.map(promo => (
+                  <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {promosToShow.map((promo) => (
                       <motion.div
                         key={promo.id}
                         variants={gridItemVariants}
@@ -183,10 +186,7 @@ function UMKMPage() {
                             <h3 className="font-bold text-lg text-gray-800 mb-2">{promo.judul}</h3>
                             <p className="text-gray-600 text-sm line-clamp-3">{promo.deskripsi}</p>
                           </div>
-                          <Link
-                            to={`/umkm/${promo.umkmId}`}
-                            className="text-sm font-semibold text-primary hover:underline mt-4 block"
-                          >
+                          <Link to={`/umkm/${promo.umkmId}`} className="text-sm font-semibold text-primary hover:underline mt-4 block">
                             Dari: {promo.umkmNama}
                           </Link>
                         </div>
@@ -211,15 +211,13 @@ function UMKMPage() {
             </section>
           )}
 
-          {activeTab === 'event' && (
+          {activeTab === "event" && (
             <section>
               <h2 className="sr-only">Event & Kegiatan Seru</h2>
               {filteredEvents.length > 0 ? (
                 <div>
-                  <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                  >
-                    {eventsToShow.map(event => (
+                  <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {eventsToShow.map((event) => (
                       <motion.div
                         key={event.id}
                         variants={gridItemVariants}
@@ -233,10 +231,7 @@ function UMKMPage() {
                             <h3 className="font-bold text-lg text-gray-800 mb-2">{event.judul}</h3>
                             <p className="text-gray-600 text-sm line-clamp-3">{event.deskripsi}</p>
                           </div>
-                          <Link
-                            to={`/umkm/${event.umkmId}`}
-                            className="text-sm font-semibold text-primary hover:underline mt-4 block"
-                          >
+                          <Link to={`/umkm/${event.umkmId}`} className="text-sm font-semibold text-primary hover:underline mt-4 block">
                             Di: {event.umkmNama}
                           </Link>
                         </div>
@@ -261,6 +256,7 @@ function UMKMPage() {
             </section>
           )}
         </div>
+        <Footer />
       </div>
     </motion.div>
   );
